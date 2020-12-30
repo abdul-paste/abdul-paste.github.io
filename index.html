@@ -5,16 +5,10 @@
 	<meta charset="utf-8">
 
 	
-	<title>MenuDocs</title>
-	
-	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<link rel="icon" href="/favicon.ico">
-	<link rel="apple-touch-icon" href="/site-icon120.png" sizes="120x120">
-	<link rel="apple-touch-icon" href="/site-icon152.png" sizes="152x152">
-	<link rel="apple-touch-icon" href="/site-icon76.png" sizes="76x76">
-	<link rel="apple-touch-icon" href="/site-icon72.png" sizes="72x72">
+	<title>Abdul - Paste</title>
+
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
 	<link rel="stylesheet" href="/css/lib.min.e30eafa8.css" media="all">
 
@@ -48,23 +42,7 @@
 	<span class="paste-title"><strong id="editable-paste-title" data-placeholder="New Paste" contenteditable></strong></span>
 	<div class="paste-toolbox-buttons float-right" id="desktop-paste-control-container">
 		<div id="paste-controls">
-			
-			<button id="optionsButton" title="Options" type="button" class="btn btn-sm btn-dark">
-				<i class="icon-wrench icon-large"></i>
-				<span class="button-title">Options</span>
-			</button>
-			
-			<button id="expirationButton" title="Expiration" type="button" class="btn btn-sm btn-dark">
-				<i class="icon-clock icon-large"></i>
-				<span class="button-title">Expiration</span>
-				<span class="button-data-label"></span>
-			</button>
-			<button id="encryptionButton" title="Encryption" type="button" class="btn btn-sm btn-dark">
-				<i id="encryptionIcon" class="icon-lock-open-alt icon-large"></i>
-				<span class="button-title">Encryption</span>
-				<span class="button-data-label"></span>
-			</button>
-			
+
 
 <select
     class="dropdown"
@@ -86,7 +64,7 @@
 <div class="textarea-height-wrapper">
 <textarea id="code-editor" autofocus="autofocus" tabindex="1" class="code" name="text" rows="20" wrap="off"></textarea>
 </div>
-</div>
+
 <div class="well visible-phone d-block d-sm-block d-md-none" id="phone-paste-control-container"></div>
 <input type="hidden" name="expire" value="-1">
 <input type="hidden" name="password" value="">
@@ -103,8 +81,7 @@
         	</div>
 
             <div class="modal-body">
-                <p>How long should this paste be allowed to roam the Earth?</p>
-                <p>The "forever" feature will be enabled once we hit $20/month on our <a href="https://www.patreon.com/menudocs" target="_blank">Patreon</a></p>
+               
                 <div id="expireButtonGroup" class="btn-group-toggle">
                     <label class="btn btn-light" class="btn-group-toggle" data-value="10m" data-display-value="10m">
                         <input type="radio"> Ten Minutes
@@ -140,7 +117,7 @@
         </div>
     </div>
 </div>
-</form>
+
 
 
 
@@ -193,82 +170,6 @@
         </div>
     </div>
 </div>
-
-<div id="optionsModal" class="modal fade" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-        		<h5 class="modal-title">Options</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-        	</div>
-            <div class="modal-body">
-        		<h4><i class="icon icon-remember"> </i>Persistence</h4>
-        		<label class="checkbox">
-        			<input name="saveLanguage" type="checkbox" data-gb-key="saveLanguage"> Remember my last-used language
-        		</label>
-        		<br/>
-        		<label class="checkbox">
-        			<input name="saveExpiration" type="checkbox" data-gb-key="saveExpiration"> Remember my last-used expiration
-        		</label>
-        		<h4><i class="icon icon-user"> </i>Account</h4>
-        		<div id="partial_container_login_logout">
-<div class="blocker" style="display: none;"><div class="spinner"><i class="icon icon-spinner icon-effect-spin"> </i></div></div>
-
-<p><small>MenuDocs user accounts exist solely for keeping track of your own pastes.<br>No personally-identifying information is
-retained as part of your user account. Promise.</small></p>
-<div class="well well-small">
-	<form id="loginForm" action="">
-		<input type="hidden" name="type" value="username">
-		
-		<div class="control-group">
-			<div class="input-prepend phone-expand">
-				<span class="add-on"><i class="icon icon-user"> </i></span>
-				<div class="controls input-wrapper"><input type="text" name="username" autocomplete="off" placeholder="username"></div>
-			</div>
-		</div>
-		<div class="control-group">
-			<div class="input-prepend phone-expand">
-				<span class="add-on"><i class="icon icon-key"> </i></span>
-				<div class="controls input-wrapper"><input type="password" name="password" autocomplete="off" placeholder="password"></div>
-			</div>
-		</div>
-		<div class="control-group" style="display: none;">
-			<div class="input-prepend phone-expand">
-				<span class="add-on"><i class="icon icon-key"> </i></span>
-				<div class="controls input-wrapper"><input type="password" name="confirm_password" autocomplete="off" placeholder="confirm"></div>
-			</div>
-		</div>
-		<button type="submit" class="btn btn-dark phone-expand"><i class="icon icon-login"> </i>Log In or Create Account</button>
-		<div id="login_error" class="phone-expand error" style="display: none;"></div>
-		<div id="login_moreinfo" class="phone-expand info" style="display: none;"></div>
-	</form>
-</div>
-<script type="text/javascript">
-const form = document.querySelector('form#loginForm');
-
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  event.stopPropagation();
-
-  Spectre.login(serializeForm(form));
-});
-</script>
-
-</div>
-        		<h4><i class="icon icon-wrench"> </i>Miscellanea</h4>
-        		<p><a target="_blank" href="/about">About MenuDocs</a> <small>(in a new window)</small>
-        		<br><a href="/session">My Pastes</a></p>
-        	</div>
-        	<div class="modal-footer">
-        		<button data-dismiss="modal" class="btn btn-light" aria-hidden="true">Okay</button>
-        	</div>
-        </div>
-    </div>
-</div>
-
-
 
 
 
